@@ -1,0 +1,17 @@
+.body-set{
+    background-image: url("../image/back.jpg");
+}
+.reg-col{
+    background-color:rgba(255,255,255,0.65);
+    margin-top:100px;
+}
+.font-line{
+    font-size: 23px;
+}
+.input-set {
+    border-radius: 10px;
+}
+.register-set{
+    border-radius: 10px;
+    height: 50px;
+}
