@@ -1,0 +1,152 @@
+@@ -0,0 +1,151 @@
+Query 1 Answer							
+		SNUM	SNAME	CITY	COMM		
+		1001	Peel	London	12		
+		1002	Serres	SanJose	13		
+		1003	AxelRod	New York	10		
+		1004	Motika	London	11		
+		1007	Rifkin	Barcelona	15		
+		1008	Fran	London	25		
+Query 2 Answer							
+		CNUM	CNAME	CITY	RATING	SNUM	
+		2001	Hoffman	London	100	1001	
+		2006	Clemens	London	100	1001	
+		2007	Pereira	Romme	100	1004	
+Query 4 Answer							
+		CNUM	CNAME	CITY	RATING	SNUM	
+		2008	Cisneros	SanJose	300	1007	
+		2007	Pereira	Romme	100	1004	
+		2006	Clemens	London	100	1001	
+		2004	Grass	Berlin	300	1002	
+		2003	Liu	SanJose	200	1002	
+		2002	gioVanni	Rome	200	1003	
+		2001	Hoffman	London	100	1001	
+Query 5 Answer							
+		SNUM	SNAME				
+		1001	Peel				
+		1002	Serres				
+		1003	AxelRod				
+		1004	Motika				
+		1007	Rifkin				
+Query 9 Answer							
+		CNUM	CNAME	CITY	RATING	SNUM	
+		2003	Liu	SanJose	200	1002	
+		2008	Cisneros	SanJose	300	1007	
+Query 10 Answer							
+		SNAME	CITY	CNAME	CITY		
+		Peel	London	Hoffman	London		
+		Motika	London	Hoffman	London		
+		Fran	London	Hoffman	London		
+		Serres	SanJose	Liu	SanJose		
+		Peel	London	Clemens	London		
+		Motika	London	Clemens	London		
+		Fran	London	Clemens	London		
+		Serres	SanJose	Cisneros	SanJose		
+Query 11 Answer							
+		CNAME					
+		Cisneros					
+Query 12 Answer							
+		SNAME	COMM				
+		Peel	12				
+		Motika	11				
+		Fran	25				
+Query 14 Answer							
+		CNUM	CNAME	CITY	RATING	SNUM	
+		2008	Cisneros	SanJose	300	1007	
+		2007	Pereira	Romme	100	1004	
+		2001	Hoffman	London	100	1001	
+		2003	Liu	SanJose	200	1002	
+		2008	Cisneros	SanJose	300	1007	
+Query 23 Answer							
+		CNUM	CNAME	CITY	RATING	SNUM	
+		2004	Grass	Berlin	300	1002	
+		2008	Cisneros	SanJose	300	1007	
+Query 24 Answer							
+		COUNT(DISTINCT orders.SNUM)					
+		5					
+Query 25 Answer							
+		CNAME	SNAME	COMM			
+		Liu	Serres	13			
+		Grass	Serres	13			
+		Cisneros	Rifkin	15			
+Query 27 Answer							
+		SNUM	SNAME	CITY	CNAME	CITY	
+		1001	Peel	London	Hoffman	London	
+		1004	Motika	London	Hoffman	London	
+		1008	Fran	London	Hoffman	London	
+		1002	Serres	SanJose	Liu	SanJose	
+		1001	Peel	London	Clemens	London	
+		1004	Motika	London	Clemens	London	
+		1008	Fran	London	Clemens	London	
+		1002	Serres	SanJose	Cisneros	SanJose	
+Query 31 Answer							
+		SNUM	SNAME	COMM	CITY		
+		1001	Peel	12	London		
+		1002	Serres	13	SanJose		
+		1003	AxelRod	10	New York		
+		1004	Motika	11	London		
+		1007	Rifkin	15	Barcelona		
+		1008	Fran	25	London		
+Query 37 Answer							
+		RATING	CNAME				
+		200	Liu				
+		300	Cisneros				
+Query 46 Answer							
+		ONUM	AMT	ODATE	CNUM	SNUM	
+		3002	1900.1	10-03-2090	2007	1004	
+		3005	5160.45	10-03-2090	2003	1002	
+		3006	1098.16	10-03-2090	2008	1007	
+		3008	4723	10-05-2090	2006	1001	
+		3009	1713.23	10-04-2090	2002	1003	
+		3010	1309.95	10-06-2090	2004	1002	
+		3011	9891.88	10-06-2090	2006	1001	
+Query 47 Answer							
+		ONUM	CNAME				
+		3001	Cisneros				
+		3002	Pereira				
+		3003	Hoffman				
+		3005	Liu				
+		3006	Cisneros				
+		3007	Grass				
+		3008	Clemens				
+		3009	gioVanni				
+		3010	Grass				
+		3011	Clemens				
+Query 49 Answer							
+		ONUM	AMT	ODATE	CNUM	SNUM	
+		3001	18.69	10-03-2090	2008	1007	
+		3002	1900.1	10-03-2090	2007	1004	
+		3003	767.19	10-03-2090	2001	1001	
+		3005	5160.45	10-03-2090	2003	1002	
+		3006	1098.16	10-03-2090	2008	1007	
+							
+		ONUM	AMT	ODATE	CNUM	SNUM	
+		3007	75.75	10-04-2090	2004	1002	
+		3009	1713.23	10-04-2090	2002	1003	
+Query 52 Answer							
+		CNUM	CNAME	CITY	RATING	SNUM	
+		2001	Hoffman	London	100	1001	
+		2006	Clemens	London	100	1001	
+Query 56 Answer							
+		SNAME	COMM				
+		Peel	12				
+		Serres	13				
+		AxelRod	10				
+		Motika	11				
+		Rifkin	15				
+		Fran	25				
+Query 60 Answer							
+		SUM(AMT)					
+		26658.40002					
+Query 61 Answer							
+		ONUM	AMT	ODATE			
+		3001	18.69	10-03-2090			
+		3002	1900.1	10-03-2090			
+		3003	767.19	10-03-2090			
+		3005	5160.45	10-03-2090			
+		3006	1098.16	10-03-2090			
+		3007	75.75	10-04-2090			
+		3008	4723	10-05-2090			
+		3009	1713.23	10-04-2090			
+		3010	1309.95	10-06-2090			
+		3011	9891.88	10-06-2090			

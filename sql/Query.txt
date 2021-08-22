@@ -1,0 +1,78 @@
+@@ -0,0 +1,78 @@
+#Createing tables and inserting Data 
+#table -> Salespeople
+#Insert -> INSERT INTO `salespeople` (`SNUM`, `SNAME`, `CITY`, `COMM`) VALUES ('1001', 'Peel', 'London', '12'), ('1002', 'Serres', 'SanJose', '13'), ('1004', 'Motika', 'London', '11'), ('1007', 'Rifkin', 'Barcelona', '15'), ('1003', 'AxelRod', 'New York', '10'), ('1008', 'Fran', 'London', '25');
+	
+#table -> Customers
+#Insert -> INSERT INTO `customers` (`CNUM`, `CNAME`, `CITY`, `RATING`, `SNUM`) VALUES ('2001', 'Hoffman', 'London', '100', '1001'), ('2002', 'gioVanni', 'Rome', '200', '1003'), ('2003', 'Liu', 'SanJose', '200', '1002'), ('2004', 'Grass', 'Berlin', '300', '1002'), ('2006', 'Clemens', 'London', '100', '1001'), ('2008', 'Cisneros', 'SanJose', '300', '1007'), ('2007', 'Pereira', 'Romme', '100', '1004');	
+
+#table -> Orders
+#Insert -> INSERT INTO `orders` (`ONUM`, `AMT`, `ODATE`, `CNUM`, `SNUM`) VALUES ('3001', '18.69', '2090-03-10', '2008', '1007'), ('3003', '767.19', '2090-03-10', '2001', '1001'), ('3002', '1900.10', '2090-03-10', '2007', '1004'), ('3005', '5160.45', '2090-03-10', '2003', '1002'), ('3006', '1098.16', '2090-03-10', '2008', '1007'), ('3009', '1713.23', '2090-04-10', '2002', '1003'), ('3007', '75.75', '2090-04-10', '2004', '1002'), ('3008', '4723.00', '2090-05-10', '2006', '1001'), ('3010', '1309.95', '2090-06-10', '2004', '1002'), ('3011', '9891.88', '2090-06-10', '2006', '1001');
+
+
+1) List all the columns of the Salespeople table.
+ans:- SELECT * from salespeople;
+
+2) List all customers with a rating of 100.
+ans:- SELECT * from customers WHERE RATING=100;
+
+4) Arrange the Order table by descending customer number.
+ans:- SELECT *from customers ORDER BY CNUM DESC;
+
+5) Find which salespeople currently have orders in the order table.
+ans:- SELECT DISTINCT salespeople.SNUM,salespeople.SNAME from salespeople INNER JOIN orders ON salespeople.SNUM=orders.SNUM;
+
+9) List the customer table if and only if one or more of the customers in the Customer table are located in SanJose.
+ans:- SELECT *from customers WHERE customers.CITY="sanjose";
+
+10) Match salespeople to customers according to what city they live in.
+ans:- SELECT salespeople.SNAME,salespeople.CITY,customers.CNAME,customers.CITY from salespeople,customers where salespeople.CITY=customers.CITY;
+
+11) Find all the customers in SanJose who have a rating above 200.
+ans:- SELECT customers.CNAME from customers WHERE customers.CITY="sanjose" AND RATING > "200";
+
+12) List the names and commissions of all salespeople in London.
+ans:- SELECT salespeople.SNAME,salespeople.COMM from salespeople WHERE CITY="London"
+
+14) Find all customers who booked orders on October 3.
+ans:- SELECT customers.* from customers join orders ON customers.CNUM=orders.CNUM WHERE orders.ODATE="2090/03/10";
+
+23) Select all customers with a rating above 200.
+ans:- SELECT* from customers WHERE rating > 200;
+
+24) Count the number of salespeople currently having orders in the orders table.
+ans:- SELECT COUNT(DISTINCT orders.SNUM) from salespeople,orders WHERE salespeople.SNUM=orders.SNUM;
+
+25) Write a query that produces all customers serviced by salespeople with a commission above 12%. Output the customer’s name,
+salesperson’s name.
+ans:- SELECT customers.CNAME,salespeople.SNAME,salespeople.COMM from salespeople INNER join customers ON salespeople.SNUM=customers.SNUM AND salespeople.COMM >12;
+
+27) Find salespeople with customers located in their own cities.
+ans:- SELECT DISTINCT salespeople.SNUM,salespeople.SNAME,salespeople.CITY,customers.CNAME,customers.CITY from salespeople INNER JOIN customers on salespeople.CITY=customers.CITY
+
+31) Sort the salespeople table in the following order: snum, sname, commission, city.
+ans:- SELECT SNUM,SNAME,COMM,CITY from salespeople;
+
+37) Write a select command that produces the rating followed by the name of each customer in SanJose.
+ans:- select RATING,CNAME from customers WHERE CITY="sanjose";
+
+46) Write a query that will give you all orders for more than $1000.00.
+ans:- SELECT * from orders WHERE AMT>1000;
+
+47) Write a query that lists each order number followed by the name of the customer who made that order.
+ans:- select ONUM,customers.CNAME from orders inner join customers ON orders.CNUM=customers.CNUM;
+
+49) Write two queries that will produce all orders taken on October 3 or October 4.
+ans:- SELECT * from orders WHERE ODATE="2090/03/10", SELECT * from orders WHERE ODATE="2090/04/10";
+
+52) Find all rows from the customer’s table for which the salesperson number is 1001.
+ans:- SELECT * from customers WHERE SNUM=1001;
+
+56) Find all salespeople name and commission.
+ans:- SELECT SNAME,COMM from salespeople;
+
+60) Find the SUM of all Amounts from the orders table.
+ans:- SELECT SUM(AMT) from orders;
+
+61) Write a SELECT command that produces the order number, amount, and the date from rows in the order table.
+ans:- SELECT ONUM,AMT,ODATE from orders;
